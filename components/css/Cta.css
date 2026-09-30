@@ -1,0 +1,265 @@
+/* =========================================
+   CTA - DEVFLO
+========================================= */
+
+.cta-section {
+  padding: 100px 0;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+}
+
+.cta-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  min-height: 330px;
+  padding: 65px 70px;
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy-deep) 0%,
+      var(--navy) 55%,
+      var(--teal) 100%
+    );
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(8, 27, 35, 0.16);
+}
+
+/* Décoration */
+
+.cta-box::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -80px;
+  top: -110px;
+  border-radius: 50%;
+  background: rgba(216, 195, 154, 0.12);
+  pointer-events: none;
+}
+
+.cta-box::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  left: -90px;
+  bottom: -100px;
+  border-radius: 50%;
+  background: rgba(106, 152, 143, 0.18);
+  pointer-events: none;
+}
+
+/* Contenu */
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.cta-section .section-label {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.cta-content h2 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.cta-content p {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   BOUTON
+========================================= */
+
+.btn-white-custom {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  min-height: 52px;
+  padding: 14px 24px;
+
+  border: 1px solid var(--gold-light);
+  border-radius: 999px;
+
+  background: var(--gold-light);
+  color: var(--navy);
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 10px 25px rgba(8, 27, 35, 0.18);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-white-custom i {
+  font-size: 16px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+/* Hover */
+
+.btn-white-custom:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 14px 30px rgba(8, 27, 35, 0.28);
+}
+
+.btn-white-custom:hover i {
+  transform: translateX(5px);
+}
+
+/* Clic */
+
+.btn-white-custom:active {
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   TABLETTE
+========================================= */
+
+@media (max-width: 991.98px) {
+  .cta-section {
+    padding: 80px 0;
+  }
+
+  .cta-box {
+    min-height: auto;
+    padding: 50px 45px;
+    gap: 35px;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+  }
+
+  .cta-content p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767.98px) {
+  .cta-section {
+    padding: 65px 0;
+  }
+
+  .cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+
+    padding: 42px 28px;
+    border-radius: 18px;
+  }
+
+  .cta-section .section-label {
+    margin-bottom: 13px;
+    font-size: 11px;
+  }
+
+  .cta-content h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+  .cta-content p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .btn-white-custom {
+    width: 100%;
+    min-height: 50px;
+  }
+}
+
+/* =========================================
+   PETIT MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 55px 0;
+  }
+
+  .cta-box {
+    padding: 35px 22px;
+    border-radius: 16px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-content p {
+    font-size: 13.5px;
+  }
+
+  .btn-white-custom {
+    font-size: 13.5px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITÉ
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-white-custom,
+  .btn-white-custom i {
+    transition: none;
+  }
+
+  .btn-white-custom:hover,
+  .btn-white-custom:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,370 @@
+.activities {
+  padding: 64px 0;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+}
+
+/* =========================
+   TITRE DE SECTION
+========================= */
+
+.activities .section-title {
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  color: var(--navy);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.activities__grid {
+  margin-top: 32px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.activities__card {
+  position: relative;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+  color: var(--ink);
+  overflow: hidden;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.activities__card:hover {
+  transform: translateY(-5px);
+  background: var(--navy);
+  border-color: var(--navy);
+  box-shadow: 0 20px 40px -22px rgba(8, 27, 35, 0.5);
+}
+
+/* =========================
+   ACCENT
+========================= */
+
+.activities__accent {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+
+  transition:
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.45s ease;
+}
+
+.activities__accent--primary {
+  background: var(--teal);
+}
+
+.activities__accent--violet {
+  background: var(--gold);
+}
+
+/* Accent au hover */
+
+.activities__card:hover .activities__accent {
+  width: 42px;
+}
+
+.activities__card:hover .activities__accent--primary {
+  background: var(--gold-light);
+}
+
+.activities__card:hover .activities__accent--violet {
+  background: var(--teal-light);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.activities__icon {
+  display: block;
+  margin-bottom: 12px;
+
+  font-size: 22px;
+  color: var(--teal);
+
+  transition:
+    color 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Icon hover */
+
+.activities__card:hover .activities__icon {
+  color: var(--gold-light);
+  transform: translateX(4px);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.activities__title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--navy);
+
+  transition:
+    color 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Title hover */
+
+.activities__card:hover .activities__title {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.activities__text {
+  margin-top: 8px;
+
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #64716e;
+
+  transition:
+    color 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Text hover */
+
+.activities__card:hover .activities__text {
+  color: rgba(255, 255, 255, 0.78);
+  transform: translateX(2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .activities__card:hover {
+    transform: translateY(-5px);
+    background: var(--navy);
+    border-color: var(--navy);
+    box-shadow: 0 20px 40px -22px rgba(8, 27, 35, 0.5);
+  }
+
+  .activities__card:hover .activities__accent {
+    width: 42px;
+  }
+
+  .activities__card:hover .activities__accent--primary {
+    background: var(--gold-light);
+  }
+
+  .activities__card:hover .activities__accent--violet {
+    background: var(--teal-light);
+  }
+
+  .activities__card:hover .activities__icon {
+    color: var(--gold-light);
+    transform: translateX(4px);
+  }
+
+  .activities__card:hover .activities__title {
+    color: #ffffff;
+    transform: translateX(2px);
+  }
+
+  .activities__card:hover .activities__text {
+    color: rgba(255, 255, 255, 0.78);
+    transform: translateX(2px);
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991.98px) {
+
+  .activities {
+    padding: 56px 0;
+  }
+
+  .activities__grid {
+    margin-top: 28px;
+  }
+
+  .activities__card {
+    padding: 19px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767.98px) {
+
+  .activities {
+    padding: 48px 0;
+  }
+
+  .activities .section-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .activities__grid {
+    margin-top: 24px;
+  }
+
+  .activities__card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .activities__accent {
+    width: 28px;
+    height: 3px;
+    margin-bottom: 12px;
+  }
+
+  .activities__icon {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .activities__title {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .activities__text {
+    margin-top: 7px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+}
+
+
+/* =========================
+   PETIT MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .activities {
+    padding: 42px 0;
+  }
+
+  .activities .section-title {
+    font-size: 1.65rem;
+  }
+
+  .activities__grid {
+    margin-top: 20px;
+  }
+
+  .activities__card {
+    padding: 16px;
+    border-radius: 11px;
+  }
+
+  .activities__accent {
+    width: 26px;
+    height: 3px;
+    margin-bottom: 11px;
+  }
+
+  .activities__icon {
+    font-size: 19px;
+    margin-bottom: 9px;
+  }
+
+  .activities__title {
+    font-size: 14px;
+  }
+
+  .activities__text {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+
+}
+
+
+/* =========================
+   TRÈS PETIT ÉCRAN
+========================= */
+
+@media (max-width: 360px) {
+
+  .activities {
+    padding: 36px 0;
+  }
+
+  .activities .section-title {
+    font-size: 1.5rem;
+  }
+
+  .activities__card {
+    padding: 14px;
+  }
+
+  .activities__title {
+    font-size: 13.5px;
+  }
+
+  .activities__text {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .activities__card,
+  .activities__accent,
+  .activities__icon,
+  .activities__title,
+  .activities__text {
+    transition: none;
+  }
+
+  .activities__card:hover,
+  .activities__card:hover .activities__icon,
+  .activities__card:hover .activities__title,
+  .activities__card:hover .activities__text {
+    transform: none;
+  }
+}
+

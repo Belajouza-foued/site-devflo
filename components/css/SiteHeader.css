@@ -1,0 +1,291 @@
+/* =========================================================
+   SITE HEADER — DEVFLO
+   ========================================================= */
+.site-header__logo {
+  display: block;
+  width: 65px;
+  height: 65px;
+  
+   border-radius: 50% !important;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767.98px) {
+  .site-header__logo {
+    width: 50px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header__logo {
+    width: 110px;
+  }
+}
+.site-header {
+  position: relative;
+  z-index: 1000;
+
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow: 0 4px 20px rgba(8, 27, 35, 0.18);
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.site-header .navbar {
+  min-height: 76px;
+  padding: 15px 0;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.site-header .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.site-header__brand-name {
+  color: var(--gold-light);
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  transition: color 0.2s ease;
+}
+
+.site-header .navbar-brand:hover .site-header__brand-name {
+  color: var(--teal);
+}
+
+.site-header__tagline {
+  margin-left: 9px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.site-header .nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 2px !important;
+
+  color: rgba(255, 255, 255, 0.9) !important;
+
+  font-size: 14.5px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Soulignement */
+
+.site-header .nav-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--gold-light);
+
+  transition: width 0.25s ease;
+}
+
+/* Hover */
+
+.site-header .nav-link:hover {
+  color: var(--gold-light) !important;
+  transform: translateY(-1px);
+}
+
+.site-header .nav-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   BOUTON DEVIS
+   ========================================================= */
+
+.site-header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 10px 22px !important;
+
+  color: var(--navy) !important;
+  background: var(--gold-light);
+
+  border: 1px solid var(--gold-light);
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(8, 27, 35, 0.18);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.site-header__cta:hover {
+  color: #ffffff !important;
+  background: var(--teal);
+  border-color: var(--teal);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(8, 27, 35, 0.25);
+}
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+.site-header .navbar-toggler {
+  display: flex;
+  overflow: hidden;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+
+  font-size: 17px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-header .navbar-toggler:hover {
+  color: #ffffff;
+
+  background: var(--teal);
+
+  border-color: var(--teal);
+}
+
+.site-header .navbar-toggler:focus {
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(216, 195, 154, 0.25);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+  .site-header .navbar {
+    min-height: 70px;
+  }
+
+  .site-header .navbar-collapse {
+    margin-top: 14px;
+    padding: 8px 0 4px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .site-header .navbar-nav {
+    align-items: stretch !important;
+    gap: 0 !important;
+  }
+
+  .site-header .nav-item {
+    width: 100%;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .site-header .nav-link {
+    display: flex;
+
+    width: 100%;
+
+    padding: 13px 4px !important;
+
+    color: #ffffff !important;
+
+    font-size: 15px;
+  }
+
+  .site-header .nav-link:hover {
+    color: var(--gold-light) !important;
+    transform: none;
+  }
+
+  .site-header .nav-link::after {
+    display: none;
+  }
+
+  .site-header .nav-item.mt-2 {
+    margin-top: 14px !important;
+    padding-top: 4px;
+  }
+
+  .site-header__cta {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+/* =========================================================
+   PETIT MOBILE
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+  .site-header__brand-name {
+    font-size: 19px;
+  }
+
+  .site-header__tagline {
+    display: none;
+  }
+
+  .site-header .navbar-brand {
+    max-width: calc(100% - 55px);
+  }
+}

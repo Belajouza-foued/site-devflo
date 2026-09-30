@@ -1,0 +1,514 @@
+
+/* =========================
+   SECTION
+========================= */
+
+.projects-carousel {
+  padding: 110px 0;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.projects-carousel__container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.projects-carousel__header {
+  max-width: 720px;
+  margin-bottom: 55px;
+}
+
+.projects-carousel__eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.projects-carousel__title {
+  margin: 0;
+  color: var(--navy);
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.projects-carousel__intro {
+  max-width: 650px;
+  margin: 20px 0 0;
+  color: rgba(22, 33, 31, 0.64);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+
+/* =========================
+   CAROUSEL WRAPPER
+========================= */
+
+.projects-carousel__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.project-card {
+  width: min(920px, calc(100% - 100px));
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 25px 60px rgba(8, 27, 35, 0.10);
+}
+
+
+/* =========================
+   BROWSER
+========================= */
+
+.project-card__browser {
+  overflow: hidden;
+  background: #eef1ef;
+}
+
+.project-card__browser-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 48px;
+  padding: 0 18px;
+  border-bottom: 1px solid rgba(8, 27, 35, 0.08);
+  background: #f7f8f7;
+}
+
+.project-card__dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.project-card__dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c5ccc9;
+}
+
+.project-card__address {
+  flex: 1;
+  max-width: 420px;
+  padding: 7px 16px;
+  overflow: hidden;
+  border: 1px solid rgba(8, 27, 35, 0.08);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #7a8581;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-card__screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.project-card__screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.project-card__content {
+  position: relative;
+  padding: 32px 38px 36px;
+}
+
+.project-card__number {
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-family: "Fraunces", serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-card__title {
+  margin: 0;
+  color: var(--navy);
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.project-card__description {
+  max-width: 680px;
+  margin: 10px 0 20px;
+  color: rgba(22, 33, 31, 0.65);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.project-card__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.project-card__technologies span {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   LINK
+========================= */
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.project-card__link span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.project-card__link:hover {
+  gap: 15px;
+  color: var(--navy);
+}
+
+
+/* =========================
+   ARROWS
+========================= */
+
+.projects-carousel__arrow {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--navy);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(8, 27, 35, 0.10);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.projects-carousel__arrow:hover {
+  transform: scale(1.08);
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.projects-carousel__arrow--prev {
+  left: 0;
+}
+
+.projects-carousel__arrow--next {
+  right: 0;
+}
+
+
+/* =========================
+   DOTS
+========================= */
+
+.projects-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.projects-carousel__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(22, 33, 31, 0.2);
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.projects-carousel__dot--active {
+  width: 28px;
+  background: var(--teal);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991.98px) {
+
+  .projects-carousel {
+    padding: 85px 0;
+  }
+
+  .projects-carousel__container {
+    width: min(100% - 32px, 850px);
+  }
+
+  .projects-carousel__header {
+    margin-bottom: 42px;
+  }
+
+  .project-card {
+    width: calc(100% - 90px);
+  }
+
+  .project-card__content {
+    padding: 28px;
+  }
+
+  .projects-carousel__arrow {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767.98px) {
+
+  .projects-carousel {
+    padding: 70px 0;
+  }
+
+  .projects-carousel__container {
+    width: calc(100% - 30px);
+  }
+
+  .projects-carousel__header {
+    margin-bottom: 32px;
+  }
+
+  .projects-carousel__title {
+    font-size: 2.25rem;
+  }
+
+  .projects-carousel__intro {
+    font-size: 14px;
+  }
+
+  .project-card {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .project-card__browser-top {
+    height: 40px;
+    padding: 0 12px;
+    gap: 12px;
+  }
+
+  .project-card__dots {
+    gap: 4px;
+  }
+
+  .project-card__dots span {
+    width: 7px;
+    height: 7px;
+  }
+
+  .project-card__address {
+    padding: 5px 10px;
+    font-size: 9px;
+  }
+
+  .project-card__screen {
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-card__content {
+    padding: 24px 20px 26px;
+  }
+
+  .project-card__title {
+    font-size: 21px;
+  }
+
+  .project-card__description {
+    font-size: 13px;
+  }
+
+  .project-card__technologies {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .project-card__technologies span {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .projects-carousel__arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .projects-carousel__arrow--prev {
+    left: -5px;
+  }
+
+  .projects-carousel__arrow--next {
+    right: -5px;
+  }
+
+  .projects-carousel__dots {
+    margin-top: 22px;
+  }
+}
+
+
+/* =========================
+   PETIT MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .projects-carousel {
+    padding: 60px 0;
+  }
+
+  .projects-carousel__container {
+    width: calc(100% - 24px);
+  }
+
+  .projects-carousel__title {
+    font-size: 2rem;
+  }
+
+  .projects-carousel__intro {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .project-card__browser-top {
+    height: 36px;
+  }
+
+  .project-card__screen {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-card__content {
+    padding: 20px 16px 22px;
+  }
+
+  .project-card__title {
+    font-size: 19px;
+  }
+
+  .project-card__description {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .project-card__link {
+    font-size: 13px;
+  }
+
+  .projects-carousel__arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 21px;
+  }
+
+  .projects-carousel__arrow--prev {
+    left: -7px;
+  }
+
+  .projects-carousel__arrow--next {
+    right: -7px;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .projects-carousel__arrow,
+  .projects-carousel__dot,
+  .project-card__link {
+    transition: none;
+  }
+
+  .projects-carousel__arrow:hover {
+    transform: none;
+  }
+
+  .project-card__link:hover {
+    gap: 10px;
+  }
+}

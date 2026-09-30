@@ -1,0 +1,171 @@
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+  padding: 110px 0;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.intro__title {
+  max-width: 430px;
+  margin: 0;
+
+  color: var(--navy);
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+
+  transition:
+    color 0.4s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Petit effet au passage de la souris */
+
+.intro__title:hover {
+  color: var(--teal);
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.intro__text {
+  max-width: 680px;
+  margin: 0 0 20px;
+
+  color: rgba(22, 33, 31, 0.72);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.intro__text:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =====================================================
+   DECORATION
+===================================================== */
+
+.intro .col-lg-4 {
+  position: relative;
+}
+
+.intro .col-lg-4::before {
+  content: "";
+
+  display: block;
+
+  width: 48px;
+  height: 4px;
+
+  margin-bottom: 24px;
+
+  background: var(--teal);
+  border-radius: 999px;
+
+  transition:
+    width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.4s ease;
+}
+
+.intro .col-lg-4:hover::before {
+  width: 80px;
+  background: var(--gold);
+}
+
+
+/* =====================================================
+   TEXT SIDE
+===================================================== */
+
+.intro .col-lg-7 {
+  position: relative;
+}
+
+.intro .col-lg-7::before {
+  content: "";
+
+  position: absolute;
+  left: -35px;
+  top: 3px;
+
+  width: 1px;
+  height: calc(100% - 6px);
+
+  background: var(--line);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991.98px) {
+  .intro {
+    padding: 85px 0;
+  }
+
+  .intro__title {
+    max-width: 650px;
+  }
+
+  .intro .col-lg-7::before {
+    display: none;
+  }
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 575.98px) {
+  .intro {
+    padding: 70px 0;
+  }
+
+  .intro__title {
+    font-size: 2.25rem;
+    letter-spacing: -1px;
+  }
+
+  .intro__text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .intro .col-lg-4::before {
+    width: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .intro__title,
+  .intro .col-lg-4::before {
+    transition: none;
+  }
+
+  .intro__title:hover {
+    transform: none;
+  }
+}

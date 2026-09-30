@@ -1,0 +1,333 @@
+.process {
+padding: 100px 0;
+background: #f8f9fb;
+overflow: hidden;
+}
+
+.process__header {
+max-width: 720px;
+margin: 0 auto 70px;
+text-align: center;
+}
+
+.process__eyebrow {
+display: inline-block;
+margin-bottom: 12px;
+font-size: 0.75rem;
+font-weight: 700;
+letter-spacing: 0.14em;
+color: #2563eb;
+}
+
+.process__header .section-title {
+margin-bottom: 16px;
+}
+
+.process__intro {
+max-width: 620px;
+margin: 0 auto;
+color: #64748b;
+font-size: 1rem;
+line-height: 1.7;
+}
+
+/* =========================
+TIMELINE
+========================= */
+
+.process__list {
+display: flex;
+align-items: flex-start;
+width: 100%;
+margin: 0;
+padding: 0;
+}
+
+.process__step {
+position: relative;
+flex: 1;
+min-width: 0;
+text-align: center;
+}
+
+/* Partie supérieure */
+
+.process__top {
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 70px;
+}
+
+/* Cercle numéro */
+
+.process__number {
+position: relative;
+z-index: 2;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: 64px;
+height: 64px;
+
+border: 2px solid var(--teal);
+border-radius: 50%;
+
+background: #ffffff;
+color: var(--navy);
+
+font-size: 0.95rem;
+font-weight: 800;
+
+box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+
+transition:
+transform 0.35s ease,
+background 0.35s ease,
+color 0.35s ease,
+box-shadow 0.35s ease;
+}
+
+/* Ligne entre les étapes */
+
+.process__line {
+position: absolute;
+
+top: 50%;
+left: 50%;
+
+width: 100%;
+height: 2px;
+
+background: #dbe3ef;
+
+transform: translateY(-50%);
+z-index: 1;
+}
+
+/* Contenu */
+
+.process__content {
+max-width: 190px;
+margin: 28px auto 0;
+}
+
+.process__title {
+margin: 0 0 10px;
+
+color: #0f172a;
+
+font-size: 1.1rem;
+font-weight: 700;
+
+transition: color 0.3s ease;
+}
+
+.process__text {
+margin: 0;
+
+color: #64748b;
+
+font-size: 0.9rem;
+line-height: 1.65;
+}
+
+/* =========================
+ANIMATION HOVER
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+.process__step {
+cursor: default;
+}
+
+.process__step:hover .process__number {
+transform: translateY(-8px) scale(1.08);
+
+background: var(--teal);
+color: #ffffff;
+
+box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
+
+
+}
+
+.process__step:hover .process__title {
+color: var(--teal);
+}
+
+.process__step:hover .process__content {
+transform: translateY(-3px);
+}
+
+.process__content {
+transition: transform 0.35s ease;
+}
+}
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width: 991.98px) {
+.process {
+padding: 80px 0;
+}
+
+.process__header {
+margin-bottom: 55px;
+}
+
+.process__number {
+width: 58px;
+height: 58px;
+font-size: 0.85rem;
+}
+
+.process__content {
+max-width: 155px;
+margin-top: 24px;
+}
+
+.process__title {
+font-size: 1rem;
+}
+
+.process__text {
+font-size: 0.84rem;
+}
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 767.98px) {
+.process {
+padding: 70px 0;
+}
+
+.process__header {
+margin-bottom: 50px;
+padding: 0 10px;
+}
+
+.process__intro {
+font-size: 0.92rem;
+}
+
+.process__list {
+display: block;
+position: relative;
+padding-left: 32px;
+}
+
+.process__step {
+display: grid;
+grid-template-columns: 70px 1fr;
+gap: 20px;
+min-height: 130px;
+text-align: left;
+}
+
+.process__top {
+height: 70px;
+justify-content: flex-start;
+}
+
+.process__number {
+width: 58px;
+height: 58px;
+flex-shrink: 0;
+}
+
+/* Ligne verticale */
+
+.process__line {
+top: 58px;
+left: 29px;
+
+
+width: 2px;
+height: calc(100% + 10px);
+
+transform: none;
+
+background: #dbe3ef;
+
+
+}
+
+.process__content {
+max-width: none;
+margin: 7px 0 0;
+}
+
+.process__title {
+font-size: 1.05rem;
+margin-bottom: 8px;
+}
+
+.process__text {
+font-size: 0.88rem;
+line-height: 1.6;
+}
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+.process {
+padding: 60px 0;
+}
+
+.process__list {
+padding-left: 5px;
+}
+
+.process__step {
+grid-template-columns: 58px 1fr;
+gap: 15px;
+min-height: 125px;
+}
+
+.process__number {
+width: 52px;
+height: 52px;
+font-size: 0.78rem;
+}
+
+.process__line {
+left: 25px;
+top: 52px;
+}
+
+.process__content {
+margin-top: 3px;
+}
+
+.process__title {
+font-size: 1rem;
+}
+
+.process__text {
+font-size: 0.84rem;
+}
+}
+
+/* =========================
+ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+.process__number,
+.process__title,
+.process__content {
+transition: none;
+}
+}
