@@ -104,9 +104,22 @@
   color: var(--muted);
 }
 
-@media (min-width: 576px){
-  .contact__submit{
+@media (min-width: 576px) {
+  .contact__submit {
     width: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact {
+    padding: 48px 0;
+  }
+  .contact__note {
+    font-size: 13px !important;
+  }
+
+  .contact__form {
+    padding: 24px;
   }
 }
 

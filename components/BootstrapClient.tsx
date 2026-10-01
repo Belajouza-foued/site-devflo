@@ -1,5 +1,5 @@
 "use client";
-
+import { useLanguage } from "../context/LanguageContext";
 import { useEffect } from "react";
 
 // Bootstrap.bundle manipule le DOM directement (pas compatible SSR),

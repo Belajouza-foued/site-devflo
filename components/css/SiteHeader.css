@@ -1,6 +1,125 @@
 /* =========================================================
    SITE HEADER — DEVFLO
    ========================================================= */
+   /* =========================================
+   LANGUAGE BUTTON
+   ========================================= */
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  height: 38px;
+  min-width: 62px;
+
+  margin-left: 20px;
+  padding: 0 12px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #0f172a;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.language-toggle i {
+  font-size: 9px;
+  transition: transform 0.2s ease;
+}
+
+.language-toggle:hover {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+}
+
+.language-toggle:hover i {
+  transform: translateY(2px);
+}
+
+
+/* =========================================
+   TABLETTE
+   ========================================= */
+
+@media (max-width: 991.98px) {
+
+  .language-toggle {
+    margin-left: 15px;
+    height: 36px;
+    min-width: 60px;
+    padding: 0 11px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .language-toggle i {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767.98px) {
+
+  .language-toggle {
+    height: 34px;
+    min-width: 56px;
+
+    margin-left: auto;
+    margin-right: 10px;
+
+    padding: 0 10px;
+
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .language-toggle i {
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================
+   PETIT MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  .language-toggle {
+    height: 32px;
+    min-width: 52px;
+
+    margin-right: 7px;
+
+    padding: 0 8px;
+
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .language-toggle i {
+    font-size: 7px;
+  }
+}
 .site-header__logo {
   display: block;
   width: 65px;
@@ -80,7 +199,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-
+justify-content: center;
   padding: 8px 2px !important;
 
   color: rgba(255, 255, 255, 0.9) !important;

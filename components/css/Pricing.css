@@ -380,6 +380,13 @@
   .pricing__text {
     min-height: auto;
   }
+  
+  .pricing__name {
+    font-size: 17px !important;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  .pricing__badge {}
 }
 
 

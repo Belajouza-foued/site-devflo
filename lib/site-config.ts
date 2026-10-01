@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
   phone: "+216 23 782 889",
   phoneHref: "tel:+21623782889",
   whatsappHref: "https://wa.me/21623782889",
-  email: "contact@atelierweb.tn",
+  email: "site@devflo.pro",
   location: "Tunisie",
   nav: [
     { label: "Services", href: "#services" },

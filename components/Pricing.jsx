@@ -1,96 +1,184 @@
+"use client";
+
+import { useLanguage } from "../context/LanguageContext";
 import "./css/Pricing.css";
 
-const PLANS = [
-  {
-    name: "Starter",
-    price: "500 DT",
-    note: "À partir de",
-    text: "Pour une petite activité qui souhaite être présente sur Internet.",
-    features: [
-      "Site vitrine",
-      "Design moderne",
-      "Responsive mobile",
-      "Jusqu'à 5 pages",
-      "Formulaire de contact",
-      "Mise en ligne",
-    ],
-    cta: "Demander un devis",
-    featured: false,
-  },
-  {
-    name: "Professionnel",
-    price: "900 DT",
-    note: "À partir de",
-    text: "Pour une entreprise qui souhaite présenter son activité de manière complète.",
-    features: [
-      "Design personnalisé",
-      "Plusieurs pages",
-      "Responsive mobile, tablette et ordinateur",
-      "Formulaire de contact",
-      "Galerie photos",
-      "Google Maps",
-      "SEO de base",
-      "Mise en ligne",
-      "Site multilingue selon les besoins",
-    ],
-    cta: "Demander un devis",
-    featured: true,
-  },
-  {
-    name: "Sur mesure",
-    price: "Devis personnalisé",
-    note: null,
-    text: "Pour les projets nécessitant des fonctionnalités spécifiques.",
-    features: [
-      "E-commerce",
-      "Catalogue produits",
-      "Système de réservation",
-      "Espace client",
-      "Administration",
-      "Multilingue",
-      "Fonctionnalités personnalisées",
-    ],
-    cta: "Parlons de votre projet",
-    featured: false,
-  },
-];
+const PLANS = {
+  fr: [
+    {
+      name: "Starter",
+      price: "500 DT",
+      note: "À partir de",
+      text: "Pour une petite activité qui souhaite être présente sur Internet.",
+      features: [
+        "Site vitrine",
+        "Design moderne",
+        "Responsive mobile",
+        "Jusqu'à 5 pages",
+        "Formulaire de contact",
+        "Mise en ligne",
+      ],
+      cta: "Demander un devis",
+      featured: false,
+    },
+    {
+      name: "Professionnel",
+      price: "900 DT",
+      note: "À partir de",
+      text: "Pour une entreprise qui souhaite présenter son activité de manière complète.",
+      features: [
+        "Design personnalisé",
+        "Plusieurs pages",
+        "Responsive mobile, tablette et ordinateur",
+        "Formulaire de contact",
+        "Galerie photos",
+        "Google Maps",
+        "SEO de base",
+        "Mise en ligne",
+        "Site multilingue selon les besoins",
+      ],
+      cta: "Demander un devis",
+      featured: true,
+    },
+    {
+      name: "Sur mesure",
+      price: "Devis personnalisé",
+      note: null,
+      text: "Pour les projets nécessitant des fonctionnalités spécifiques.",
+      features: [
+        "E-commerce",
+        "Catalogue produits",
+        "Système de réservation",
+        "Espace client",
+        "Administration",
+        "Multilingue",
+        "Fonctionnalités personnalisées",
+      ],
+      cta: "Parlons de votre projet",
+      featured: false,
+    },
+  ],
+
+  en: [
+    {
+      name: "Starter",
+      price: "500 DT",
+      note: "Starting from",
+      text: "For a small business that wants to establish an online presence.",
+      features: [
+        "Business website",
+        "Modern design",
+        "Mobile responsive",
+        "Up to 5 pages",
+        "Contact form",
+        "Website launch",
+      ],
+      cta: "Request a quote",
+      featured: false,
+    },
+    {
+      name: "Professional",
+      price: "900 DT",
+      note: "Starting from",
+      text: "For a business that wants to present its activity in a complete and professional way.",
+      features: [
+        "Custom design",
+        "Multiple pages",
+        "Responsive on mobile, tablet and desktop",
+        "Contact form",
+        "Photo gallery",
+        "Google Maps",
+        "Basic SEO",
+        "Website launch",
+        "Multilingual website according to your needs",
+      ],
+      cta: "Request a quote",
+      featured: true,
+    },
+    {
+      name: "Custom",
+      price: "Custom quote",
+      note: null,
+      text: "For projects requiring specific features and functionalities.",
+      features: [
+        "E-commerce",
+        "Product catalog",
+        "Booking system",
+        "Customer area",
+        "Administration",
+        "Multilingual",
+        "Custom features",
+      ],
+      cta: "Let's discuss your project",
+      featured: false,
+    },
+  ],
+};
 
 function Pricing() {
+  const { language } = useLanguage();
+
+  const content = {
+    fr: {
+      eyebrow: "TARIFS",
+      title: "Des solutions adaptées à votre projet",
+      lead:
+        "Des offres à partir de 500 DT pour créer un site professionnel, moderne et adapté à votre activité. Chaque projet peut être personnalisé selon vos besoins.",
+      badge: "Le plus choisi",
+    },
+
+    en: {
+      eyebrow: "PRICING",
+      title: "Solutions adapted to your project",
+      lead:
+        "Packages starting from 500 DT to create a professional, modern website adapted to your business. Each project can be customized according to your needs.",
+      badge: "Most chosen",
+    },
+  };
+
+  const t = content[language];
+  const plans = PLANS[language];
+
   return (
     <section id="tarifs" className="pricing">
       <div className="container">
 
         <div className="row">
           <div className="col-lg-7">
+
             <span className="pricing__eyebrow">
-              TARIFS
+              {t.eyebrow}
             </span>
 
             <h2 className="section-title">
-              Des solutions adaptées à votre projet
+              {t.title}
             </h2>
 
             <p className="section-lead">
-              Des offres à partir de 500 DT pour créer un site professionnel,
-              moderne et adapté à votre activité. Chaque projet peut être
-              personnalisé selon vos besoins.
+              {t.lead}
             </p>
+
           </div>
         </div>
 
         <div className="row g-4 pricing__grid">
-          {PLANS.map((plan) => (
-            <div className="col-lg-4" key={plan.name}>
+          {plans.map((plan) => (
+            <div
+              className="col-lg-4"
+              key={plan.name}
+            >
 
               <div
                 className={`pricing__card ${
-                  plan.featured ? "pricing__card--featured" : ""
+                  plan.featured
+                    ? "pricing__card--featured"
+                    : ""
                 }`}
               >
 
                 {plan.featured && (
                   <span className="pricing__badge">
-                    Le plus choisi
+                    {t.badge}
                   </span>
                 )}
 
@@ -99,6 +187,7 @@ function Pricing() {
                 </h3>
 
                 <div className="pricing__price">
+
                   {plan.note && (
                     <span className="pricing__note">
                       {plan.note}
@@ -108,6 +197,7 @@ function Pricing() {
                   <span className="pricing__amount">
                     {plan.price}
                   </span>
+
                 </div>
 
                 <p className="pricing__text">
@@ -118,6 +208,7 @@ function Pricing() {
                   {plan.features.map((feature) => (
                     <li key={feature}>
                       <i className="fa-solid fa-check"></i>
+
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -128,6 +219,7 @@ function Pricing() {
                   className="pricing__cta"
                 >
                   {plan.cta}
+
                   <i className="fa-solid fa-arrow-right"></i>
                 </a>
 

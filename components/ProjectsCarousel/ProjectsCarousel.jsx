@@ -1,12 +1,16 @@
 "use client";
+
 import { useRef, useState } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 import "./ProjectsCarousel.css";
 
 const projects = [
   {
     title: "RIMAG Export",
-    description:
-      "Site web professionnel pour une entreprise tunisienne spécialisée dans l’exportation de produits alimentaires.",
+    description: {
+      fr: "Site web professionnel pour une entreprise tunisienne spécialisée dans l’exportation de produits alimentaires.",
+      en: "Professional website for a Tunisian company specialized in food product exports.",
+    },
     image: "/images/projet-rimag.png",
     technologies: ["Next.js", "React", "TypeScript"],
     url: "https://rimag.tn",
@@ -14,17 +18,21 @@ const projects = [
 
   {
     title: "Seafield",
-    description:
-      "Site web moderne pour une entreprise spécialisée dans les solutions et services maritimes.",
+    description: {
+      fr: "Site web moderne pour une entreprise spécialisée dans les solutions et services maritimes.",
+      en: "Modern website for a company specialized in maritime solutions and services.",
+    },
     image: "/images/projet-seafield.png",
-    technologies: ["React", "JavaScript", "CSS"],
+    technologies: ["React", "JavaScript", "Next"],
     url: "https://test-seafield.vercel.app/",
   },
 
   {
     title: "SPA",
-    description:
-      "Site web élégant pour un espace de bien-être et de soins, avec une présentation claire des services proposés.",
+    description: {
+      fr: "Site web élégant pour un espace de bien-être et de soins, avec une présentation claire des services proposés.",
+      en: "Elegant website for a wellness and care space, with a clear presentation of its services.",
+    },
     image: "/images/site-spa-1.png",
     technologies: ["React", "JavaScript", "CSS"],
     url: "https://spa-massage-steel.vercel.app/",
@@ -32,8 +40,10 @@ const projects = [
 
   {
     title: "World Fitness",
-    description:
-      "Site web dédié au fitness et au sport, avec une interface dynamique présentant les activités et les services.",
+    description: {
+      fr: "Site web dédié au fitness et au sport, avec une interface dynamique présentant les activités et les services.",
+      en: "Fitness and sports website with a dynamic interface presenting activities and services.",
+    },
     image: "/images/projet-worldfitness.png",
     technologies: ["React", "JavaScript", "Bootstrap"],
     url: "https://react-project-git-world-fitness-foueds-projects-55b6a7cf.vercel.app/",
@@ -41,17 +51,21 @@ const projects = [
 
   {
     title: "Gym Store",
-    description:
-      "Boutique en ligne dédiée aux équipements et accessoires de fitness, avec une interface pensée pour faciliter la navigation.",
+    description: {
+      fr: "Boutique en ligne dédiée aux équipements et accessoires de fitness, avec une interface pensée pour faciliter la navigation.",
+      en: "Online store dedicated to fitness equipment and accessories, with an interface designed for easy navigation.",
+    },
     image: "/images/projet-gym-store.png",
-    technologies: ["React","Bootstrap", "JavaScript", "Bootstrap"],
+    technologies: ["React", "Next", "JavaScript", "Bootstrap"],
     url: "https://gym-sport-nine.vercel.app/",
   },
 
   {
     title: "Farjallah Auto",
-    description:
-      "Plateforme web pour la vente de pièces automobiles, avec catalogue de produits, recherche et gestion des commandes.",
+    description: {
+      fr: "Plateforme web pour la vente de pièces automobiles, avec catalogue et recherche de produits.",
+      en: "Web platform for selling auto parts, with a product catalog and search functionality.",
+    },
     image: "/images/projet-farjalah.png",
     technologies: ["React", "Node.js", "Express", "MongoDB"],
     url: "https://farjallah-react-4ffg.vercel.app",
@@ -59,34 +73,71 @@ const projects = [
 
   {
     title: "Projet Guide",
-    description:
-      "Site web professionnel conçu pour présenter l’activité, les services et les informations essentielles de l’entreprise.",
+    description: {
+      fr: "Site web professionnel conçu pour présenter l’activité, les services et les informations essentielles de l’entreprise.",
+      en: "Professional website designed to present the company's business, services and essential information.",
+    },
     image: "/images/projet-firas.png",
-    technologies: ["React", "JavaScript", "CSS"],
+    technologies: ["HTML", "JavaScript", "CSS"],
     url: "https://site-firas.vercel.app/index.html",
   },
 
   {
     title: "BCC",
-    description:
-      "Site web professionnel avec une présentation moderne de l’entreprise, de ses services et de ses informations principales.",
+    description: {
+      fr: "Site web professionnel avec une présentation moderne de l’entreprise, de ses services et de ses informations principales.",
+      en: "Professional website with a modern presentation of the company, its services and main information.",
+    },
     image: "/images/projet-bcc.png",
     technologies: ["React", "JavaScript", "CSS"],
     url: "https://bcc-socity.vercel.app/home",
   },
+
   {
-  title: "Printpakia",
-  description:
-    "Site web professionnel pour une entreprise spécialisée dans l’impression et la personnalisation de différents produits.",
-  image: "/images/projet-printpakia.png",
-  technologies: ["React", "JavaScript", "CSS"],
-  url: "https://vercel.com/foueds-projects-55b6a7cf/printakia-offset",
-},
+    title: "Printpakia",
+    description: {
+      fr: "Site web professionnel pour une entreprise spécialisée dans l’impression et la personnalisation de différents produits.",
+      en: "Professional website for a company specialized in printing and customizing various products.",
+    },
+    image: "/images/projet-printpakia.png",
+    technologies: ["React", "JavaScript", "CSS"],
+    url: "https://vercel.com/foueds-projects-55b6a7cf/printakia-offset",
+  },
 ];
 
 function ProjectsCarousel() {
+  const { language } = useLanguage();
+
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStart = useRef(null);
+
+  const content = {
+    fr: {
+      eyebrow: "Mes réalisations",
+      title: "Des sites pensés pour être vus",
+      intro:
+        "Découvrez quelques-uns de mes projets web réalisés avec une attention particulière au design, à l’expérience utilisateur et au responsive.",
+      previous: "Projet précédent",
+      next: "Projet suivant",
+      viewProject: "Voir le projet",
+      screenshot: "Capture d'écran du projet",
+      showProject: "Afficher",
+    },
+
+    en: {
+      eyebrow: "My projects",
+      title: "Websites designed to be seen",
+      intro:
+        "Discover some of my web projects, created with particular attention to design, user experience and responsive design.",
+      previous: "Previous project",
+      next: "Next project",
+      viewProject: "View project",
+      screenshot: "Screenshot of the project",
+      showProject: "Show",
+    },
+  };
+
+  const t = content[language];
 
   const nextProject = () => {
     setActiveIndex((current) =>
@@ -128,23 +179,21 @@ function ProjectsCarousel() {
   const project = projects[activeIndex];
 
   return (
-    <section className="projects-carousel">
+    <section id="realisations" className="projects-carousel">
       <div className="projects-carousel__container">
 
         {/* HEADER */}
         <div className="projects-carousel__header">
           <span className="projects-carousel__eyebrow">
-            Mes réalisations
+            {t.eyebrow}
           </span>
 
           <h2 className="projects-carousel__title">
-            Des sites pensés pour être vus
+            {t.title}
           </h2>
 
           <p className="projects-carousel__intro">
-            Découvrez quelques-uns de mes projets web réalisés avec une
-            attention particulière au design, à l’expérience utilisateur et
-            au responsive.
+            {t.intro}
           </p>
         </div>
 
@@ -160,7 +209,7 @@ function ProjectsCarousel() {
             type="button"
             className="projects-carousel__arrow projects-carousel__arrow--prev"
             onClick={previousProject}
-            aria-label="Projet précédent"
+            aria-label={t.previous}
           >
             ‹
           </button>
@@ -188,7 +237,8 @@ function ProjectsCarousel() {
               <div className="project-card__screen">
                 <img
                   src={project.image}
-                  alt={`Capture d'écran du projet ${project.title}`}
+                  alt={`${t.screenshot} ${project.title}`}
+                  className="img-cap"
                 />
               </div>
 
@@ -207,7 +257,7 @@ function ProjectsCarousel() {
               </h3>
 
               <p className="project-card__description">
-                {project.description}
+                {project.description[language]}
               </p>
 
               <div className="project-card__technologies">
@@ -224,7 +274,7 @@ function ProjectsCarousel() {
                 rel="noopener noreferrer"
                 className="project-card__link"
               >
-                Voir le projet
+                {t.viewProject}
                 <span>→</span>
               </a>
 
@@ -237,7 +287,7 @@ function ProjectsCarousel() {
             type="button"
             className="projects-carousel__arrow projects-carousel__arrow--next"
             onClick={nextProject}
-            aria-label="Projet suivant"
+            aria-label={t.next}
           >
             ›
           </button>
@@ -246,7 +296,6 @@ function ProjectsCarousel() {
 
         {/* DOTS */}
         <div className="projects-carousel__dots">
-
           {projects.map((item, index) => (
             <button
               type="button"
@@ -257,10 +306,9 @@ function ProjectsCarousel() {
                   : ""
               }`}
               onClick={() => goToProject(index)}
-              aria-label={`Afficher ${item.title}`}
+              aria-label={`${t.showProject} ${item.title}`}
             />
           ))}
-
         </div>
 
       </div>
