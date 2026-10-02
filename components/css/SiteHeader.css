@@ -397,7 +397,7 @@ justify-content: center;
 
 @media (max-width: 575.98px) {
   .site-header__brand-name {
-    font-size: 19px;
+    font-size: 15px !important;
   }
 
   .site-header__tagline {

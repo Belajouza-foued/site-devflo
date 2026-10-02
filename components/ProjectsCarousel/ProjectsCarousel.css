@@ -398,16 +398,17 @@ height: 450px !important;
 
   
   .project-card__screen {
-      width: 300px;
+      width:350px;
    height: 130px !important;
-     background-color: var(--teal);
-    
+     background-color: var(--white);
+      margin: 0 auto;
   }
   .img-cap {
           object-fit: contain;
-      height: 280px !important;  
-     width: 280px !important;
+      height: 300px !important;  
+     width: 300px !important;
       object-position: top center;
+    
   }
 
 
@@ -470,6 +471,15 @@ margin-top: 20px;
   .projects-carousel__dots {
     margin-top: 20px;
   }
+ 
+  .img-cap {
+          object-fit: contain;
+      height: 300px !important;  
+     width: 250px !important;
+      object-position: top center;
+    
+  }
+
 }
 
 
@@ -504,6 +514,7 @@ margin-top: 20px;
 
   .project-card__screen {
     height: 270px;
+  
   }
 
 
