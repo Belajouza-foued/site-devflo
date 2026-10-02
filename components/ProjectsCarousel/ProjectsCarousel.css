@@ -248,7 +248,7 @@ height: 450px !important;
   border: 1px solid var(--line);
   border-radius: 50%;
   background: var(--teal-light);
-  color: var(--navy);
+  color: var(--cream);
   font-size: 30px;
   line-height: 1;
   cursor: pointer;
@@ -455,6 +455,7 @@ margin-top: 20px;
     height: 34px;
     font-size: 10px;
     background: var(--sand);
+    color: var(--navy) !important;
    
   }
 
@@ -513,8 +514,13 @@ margin-top: 20px;
   /* IMAGE */
 
   .project-card__screen {
-    height: 270px;
-  
+    height: 270px !important;
+    width: 280px !important;
+    
+  }
+  .img-cap {
+    width: 300px !important;
+   
   }
 
 
@@ -541,6 +547,7 @@ margin-top: 20px;
     width: 30px;
     height: 30px;
     font-size: 20px;
+    background-color: var(--sand);
   }
 
   .projects-carousel__arrow--prev {

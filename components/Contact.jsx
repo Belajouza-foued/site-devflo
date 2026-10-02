@@ -1,11 +1,23 @@
+
 "use client";
 
+import { useState } from "react";
 import { siteConfig } from "../lib/site-config";
 import "./css/Contact.css";
 import { useLanguage } from "../context/LanguageContext";
 
 function Contact() {
   const { language } = useLanguage();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const content = {
     fr: {
@@ -20,6 +32,10 @@ function Contact() {
       placeholder:
         "Décrivez votre activité et ce que vous souhaitez pour votre site.",
       submit: "Envoyer la demande",
+      sending: "Envoi en cours...",
+      success: "Votre demande a bien été envoyée. Nous vous répondrons rapidement.",
+      error:
+        "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.",
     },
 
     en: {
@@ -34,10 +50,60 @@ function Contact() {
       placeholder:
         "Describe your business and what you would like for your website.",
       submit: "Send request",
+      sending: "Sending...",
+      success: "Your request has been sent successfully. We will reply shortly.",
+      error:
+        "An error occurred. Please try again or contact us directly by email.",
     },
   };
 
   const t = content[language];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Erreur lors de l'envoi");
+      }
+
+      setStatus("success");
+
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Erreur formulaire contact :", error);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="contact" className="contact">
@@ -84,16 +150,14 @@ function Contact() {
           <div className="col-lg-7">
             <form
               className="contact__form"
-              action={`mailto:${siteConfig.email}`}
-              method="post"
-              encType="text/plain"
+              onSubmit={handleSubmit}
             >
               <div className="row g-3">
 
                 <div className="col-sm-6">
                   <label
                     className="form-label"
-                    htmlFor="nom"
+                    htmlFor="name"
                   >
                     {t.name}
                   </label>
@@ -101,8 +165,10 @@ function Contact() {
                   <input
                     type="text"
                     className="form-control"
-                    id="nom"
-                    name="nom"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -110,7 +176,7 @@ function Contact() {
                 <div className="col-sm-6">
                   <label
                     className="form-label"
-                    htmlFor="telephone"
+                    htmlFor="phone"
                   >
                     {t.phone}
                   </label>
@@ -118,8 +184,10 @@ function Contact() {
                   <input
                     type="tel"
                     className="form-control"
-                    id="telephone"
-                    name="telephone"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -136,6 +204,8 @@ function Contact() {
                     className="form-control"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -154,17 +224,32 @@ function Contact() {
                     name="message"
                     rows={4}
                     placeholder={t.placeholder}
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   ></textarea>
                 </div>
 
               </div>
 
+              {status === "success" && (
+                <div className="alert alert-success mt-3" role="alert">
+                  {t.success}
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="alert alert-danger mt-3" role="alert">
+                  {t.error}
+                </div>
+              )}
+
               <button
                 type="submit"
                 className="btn btn-primary rounded-pill contact__submit"
+                disabled={loading}
               >
-                {t.submit}
+                {loading ? t.sending : t.submit}
               </button>
 
             </form>
