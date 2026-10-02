@@ -15,6 +15,6 @@
     "incremental": true,
     "plugins": [{ "name": "next" }]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Activities.jsx", "components/BootstrapClient.tsx", "components/Contact.jsx", "components/Hero.jsx", "components/Intro.jsx", "components/LandingPage.jsx", "components/Portfolio.jsx", "components/Pricing.jsx", "components/Process.jsx", "components/Services.jsx", "components/SiteFooter.jsx", "components/SiteHeader.jsx", "components/WhyUs.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Activities.jsx", "components/BootstrapClient.tsx", "components/Contact.jsx", "components/Hero.jsx", "components/Intro.jsx", "components/LandingPage.jsx", "components/Portfolio.jsx", "components/Pricing.jsx", "components/Process.jsx", "components/Services.jsx", "components/SiteFooter.jsx", "components/SiteHeader.jsx", "components/WhyUs.jsx", "components/WhatsAppButton.jsx", "app/layout.jsx"],
   "exclude": ["node_modules"]
 }

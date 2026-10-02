@@ -13,6 +13,7 @@ const translations = {
       realisations: "Réalisations",
       contact: "Contact",
     },
+
     quote: "Demander un devis",
   },
 
@@ -24,6 +25,7 @@ const translations = {
       realisations: "Projects",
       contact: "Contact",
     },
+
     quote: "Request a quote",
   },
 };
