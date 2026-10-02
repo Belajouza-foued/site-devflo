@@ -1,6 +1,6 @@
-/* =========================
-   SECTION
-========================= */
+/* =========================================================
+   PROJECTS
+========================================================= */
 
 .projects-carousel {
   padding: 110px 0;
@@ -15,13 +15,13 @@
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 .projects-carousel__header {
   max-width: 720px;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 }
 
 .projects-carousel__eyebrow {
@@ -53,39 +53,41 @@
 }
 
 
-/* =========================
-   CAROUSEL WRAPPER
-========================= */
+/* =========================================================
+   CAROUSEL
+========================================================= */
 
 .projects-carousel__wrapper {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 
-/* =========================
+/* =========================================================
    CARD
-========================= */
+========================================================= */
 
 .project-card {
-  width: min(920px, calc(100% - 100px));
+  width: min(900px, calc(100% - 110px));
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: #ffffff;
+  background: #fff;
   box-shadow: 0 25px 60px rgba(8, 27, 35, 0.1);
 }
 
 
-/* =========================
+/* =========================================================
    BROWSER
-========================= */
+========================================================= */
 
 .project-card__browser {
+  width: 100%;
   overflow: hidden;
-  background: #ffffff;
+  background: #fff;
 }
 
 .project-card__browser-top {
@@ -100,8 +102,8 @@
 
 .project-card__dots {
   display: flex;
-  gap: 6px;
   flex-shrink: 0;
+  gap: 6px;
 }
 
 .project-card__dots span {
@@ -113,13 +115,13 @@
 
 .project-card__address {
   flex: 1;
-  max-width: 420px;
   min-width: 0;
+  max-width: 420px;
   padding: 7px 16px;
   overflow: hidden;
   border: 1px solid rgba(8, 27, 35, 0.08);
   border-radius: 8px;
-  background: #ffffff;
+  background: #fff;
   color: #7a8581;
   font-size: 11px;
   text-overflow: ellipsis;
@@ -127,39 +129,36 @@
 }
 
 
-/* =========================
-   PROJECT IMAGE
-========================= */
+/* =========================================================
+   IMAGE
+========================================================= */
 
 .project-card__screen {
   width: 100%;
-  height: 500px;
+  height: 470px;
   overflow: hidden;
-  background: #ffffff;
+  background: #fff;
 }
 
-.project-card__screen {
+.img-cap {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center top;
 }
-.img-cap {
-height: 450px !important;
-}
 
 
-/* =========================
+/* =========================================================
    CONTENT
-========================= */
+========================================================= */
 
 .project-card__content {
-  padding: 24px 38px 30px;
+  padding: 25px 38px 30px;
 }
 
 .project-card__number {
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   color: var(--gold);
   font-family: "Fraunces", serif;
   font-size: 13px;
@@ -176,16 +175,16 @@ height: 450px !important;
 
 .project-card__description {
   max-width: 680px;
-  margin: 8px 0 18px;
+  margin: 9px 0 18px;
   color: rgba(22, 33, 31, 0.65);
   font-size: 14px;
   line-height: 1.65;
 }
 
 
-/* =========================
+/* =========================================================
    TECHNOLOGIES
-========================= */
+========================================================= */
 
 .project-card__technologies {
   display: flex;
@@ -205,9 +204,9 @@ height: 450px !important;
 }
 
 
-/* =========================
+/* =========================================================
    LINK
-========================= */
+========================================================= */
 
 .project-card__link {
   display: inline-flex;
@@ -233,26 +232,38 @@ height: 450px !important;
 }
 
 
-/* =========================
+/* =========================================================
    ARROWS
-========================= */
+========================================================= */
 
 .projects-carousel__arrow {
   position: absolute;
+  top: 50%;
   z-index: 5;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 48px;
   height: 48px;
+
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: 50%;
+
   background: var(--teal-light);
   color: var(--cream);
+
   font-size: 30px;
   line-height: 1;
+
   cursor: pointer;
+
+  transform: translateY(-50%);
+
   box-shadow: 0 10px 25px rgba(8, 27, 35, 0.1);
+
   transition:
     transform 0.3s ease,
     background-color 0.3s ease,
@@ -260,23 +271,23 @@ height: 450px !important;
 }
 
 .projects-carousel__arrow:hover {
-  transform: scale(1.08);
+  transform: translateY(-50%) scale(1.08);
   background: var(--gold);
   color: var(--teal);
 }
 
 .projects-carousel__arrow--prev {
-  left: 0;
- }
+  left: 5px;
+}
 
 .projects-carousel__arrow--next {
-  right: 0;
+  right: 5px;
 }
 
 
-/* =========================
+/* =========================================================
    DOTS
-========================= */
+========================================================= */
 
 .projects-carousel__dots {
   display: flex;
@@ -304,9 +315,9 @@ height: 450px !important;
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media (max-width: 991.98px) {
 
@@ -315,11 +326,11 @@ height: 450px !important;
   }
 
   .projects-carousel__container {
-    width: min(100% - 32px, 850px);
+    width: calc(100% - 32px);
   }
 
   .projects-carousel__header {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 
   .project-card {
@@ -327,7 +338,7 @@ height: 450px !important;
   }
 
   .project-card__screen {
-    height: 430px;
+    height: 400px;
   }
 
   .project-card__content {
@@ -338,45 +349,65 @@ height: 450px !important;
     width: 44px;
     height: 44px;
   }
+
+  .projects-carousel__arrow--prev {
+    left: 0;
+  }
+
+  .projects-carousel__arrow--next {
+    right: 0;
+  }
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 767.98px) {
-    .projects-carousel {
-    padding: 20px 0;
-    }
+
+  .projects-carousel {
+    padding: 65px 0;
+  }
 
   .projects-carousel__container {
-    width: calc(100% - 30px);
+    width: calc(100% - 24px);
   }
 
   .projects-carousel__header {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+  }
+
+  .projects-carousel__eyebrow {
+    font-size: 10px;
   }
 
   .projects-carousel__title {
     font-size: 2rem;
+    letter-spacing: -0.5px;
   }
 
   .projects-carousel__intro {
+    margin-top: 14px;
     font-size: 13px;
-    line-height: 1.65;
+    line-height: 1.6;
   }
+
+
+  /* CARD */
 
   .project-card {
     width: 100%;
     border-radius: 15px;
-     }
-  
+  }
+
+
+  /* BROWSER */
 
   .project-card__browser-top {
-    height: 40px;
-    padding: 0 12px;
-    gap: 12px;
+    height: 38px;
+    padding: 0 10px;
+    gap: 8px;
   }
 
   .project-card__dots {
@@ -384,201 +415,223 @@ height: 450px !important;
   }
 
   .project-card__dots span {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
   }
 
   .project-card__address {
-    padding: 5px 10px;
-    font-size: 9px;
-  }
-
-
-  /* IMAGE MOBILE */
-
-  
-  .project-card__screen {
-      width:350px;
-   height: 130px !important;
-     background-color: var(--white);
-      margin: 0 auto;
-  }
-  .img-cap {
-          object-fit: contain;
-      height: 300px !important;  
-     width: 300px !important;
-      object-position: top center;
-    
-  }
-
-
-  /* CONTENT MOBILE */
-
-  .project-card__content {
-
-margin-top: 20px;
-  
-  }
-
-  .project-card__number {
-    margin-top: 20px;
-    font-size: 12px;
-  }
-
-  .project-card__title {
-    font-size: 20px;
-    margin-top: 20px;
-  }
-
-  .project-card__description {
-    margin: 7px 0 15px;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  .project-card__technologies {
-    gap: 6px;
-    margin-bottom: 18px;
-      }
-
-  .project-card__technologies span {
-    padding: 7px 10px;
-    font-size: 9px;
-        background-color: var(--sand) !important;
-  }
-
-
-  /* ARROWS MOBILE */
-
-  .projects-carousel__arrow {
-
-    width: 34px;
-    height: 34px;
-    font-size: 10px;
-    background: var(--sand);
-    color: var(--navy) !important;
-position: relative;
-top: -25px;
-   
-  }
-
-  .projects-carousel__arrow--prev {
-    left: 120px !important;
- 
-  
-  }
-
-  .projects-carousel__arrow--next {
- 
-  }
-
-  .projects-carousel__dots {
-    margin-top: 20px;
-  }
- 
-  .img-cap {
-          object-fit: contain;
-      height: 300px !important;  
-     width: 250px !important;
-      object-position: top center;
-    
-  }
-
-}
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 480px) {
-
-  .projects-carousel {
-    padding: 20px 0;
-    line-height: 1.2px !important;
-  }
-
-  .projects-carousel__container {
-    width: calc(100% - 24px);
-  }
-
-  .projects-carousel__title {
-    font-size: 1.9rem;
-  }
-
-  .projects-carousel__intro {
+    padding: 5px 9px;
     font-size: 8px;
-  }
-
-  .project-card__browser-top {
-    height: 36px;
   }
 
 
   /* IMAGE */
 
   .project-card__screen {
-    height: 140px !important;
-    width: 300px !important;
-    
+    width: 100%;
+    height: auto;
+    min-height: 210px;
+    max-height: 320px;
   }
+
   .img-cap {
-    width: 270px !important;
-   
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    object-position: center top;
   }
 
 
   /* CONTENT */
 
   .project-card__content {
-    padding: 0px 15px 15px;
-   
+    padding: 18px 17px 22px;
   }
-   .project-card__number {
-  padding-top: 17px !important;
-    font-size: 12px;
+
+  .project-card__number {
+    margin-bottom: 6px;
+    font-size: 11px;
   }
 
   .project-card__title {
-    font-size: 14px;
-       
+    font-size: 20px;
   }
 
   .project-card__description {
+    margin: 7px 0 15px;
     font-size: 12px;
     line-height: 1.6;
   }
 
+
+  /* TECHNOLOGIES */
+
+  .project-card__technologies {
+    gap: 5px;
+    margin-bottom: 17px;
+  }
+
+  .project-card__technologies span {
+    padding: 5px 8px;
+    font-size: 9px;
+  }
+
+
+  /* LINK */
+
   .project-card__link {
     font-size: 13px;
-      }
+  }
+
+
+  /* ARROWS */
 
   .projects-carousel__arrow {
-    margin-top: 17px;
-    width: 30px;
-    height: 30px;
+    top: auto;
+    bottom: -52px;
+
+    width: 34px;
+    height: 34px;
+
     font-size: 20px;
-    background-color: var(--sand);
-     }
+
+    transform: none;
+  }
+
+  .projects-carousel__arrow:hover {
+    transform: scale(1.05);
+  }
 
   .projects-carousel__arrow--prev {
-left: 50px !important;
-bottom: 40px;
-    position: relative;
+    left: calc(50% - 45px);
   }
 
   .projects-carousel__arrow--next {
-left: -50px;
-bottom: 40px;
-    position: relative;
-     
+    right: calc(50% - 45px);
+  }
+
+
+  /* DOTS */
+
+  .projects-carousel__dots {
+    margin-top: 65px;
+    gap: 6px;
+  }
+
+  .projects-carousel__dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .projects-carousel__dot--active {
+    width: 22px;
   }
 }
 
 
-/* =========================
-   REDUCED MOTION
-========================= */
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .projects-carousel {
+    padding: 50px 0 75px;
+  }
+
+  .projects-carousel__container {
+    width: calc(100% - 20px);
+  }
+
+  .projects-carousel__title {
+    font-size: 1.75rem;
+  }
+
+  .projects-carousel__intro {
+    font-size: 12px;
+  }
+
+
+  .project-card {
+    border-radius: 12px;
+  }
+
+
+  .project-card__browser-top {
+    height: 34px;
+    padding: 0 8px;
+  }
+
+  .project-card__address {
+    font-size: 7px;
+    padding: 4px 7px;
+  }
+
+
+  .project-card__screen {
+    min-height: 170px;
+    max-height: 240px;
+  }
+
+  .img-cap {
+    max-height: 240px;
+  }
+
+
+  .project-card__content {
+    padding: 15px 13px 18px;
+  }
+
+  .project-card__number {
+    font-size: 10px;
+  }
+
+  .project-card__title {
+    font-size: 18px;
+  }
+
+  .project-card__description {
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+
+  .project-card__technologies span {
+    padding: 4px 7px;
+    font-size: 8px;
+  }
+
+
+  .project-card__link {
+    font-size: 12px;
+  }
+
+
+  .projects-carousel__arrow {
+    bottom: -48px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .projects-carousel__arrow--prev {
+    left: calc(50% - 40px);
+  }
+
+  .projects-carousel__arrow--next {
+    right: calc(50% - 40px);
+  }
+
+  .projects-carousel__dots {
+    margin-top: 60px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -589,7 +642,7 @@ bottom: 40px;
   }
 
   .projects-carousel__arrow:hover {
-    transform: none;
+    transform: translateY(-50%);
   }
 
   .project-card__link:hover {
