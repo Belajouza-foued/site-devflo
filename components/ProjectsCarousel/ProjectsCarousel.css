@@ -437,25 +437,28 @@ margin-top: 20px;
   }
 
   .project-card__technologies {
-    gap: 3px;
+    gap: 6px;
     margin-bottom: 18px;
-  }
+      }
 
   .project-card__technologies span {
-    padding: 5px 8px;
-    font-size: 10px;
+    padding: 7px 10px;
+    font-size: 9px;
+        background-color: var(--sand) !important;
   }
 
 
   /* ARROWS MOBILE */
 
   .projects-carousel__arrow {
- margin-bottom: 30px;
+
     width: 34px;
     height: 34px;
     font-size: 10px;
     background: var(--sand);
     color: var(--navy) !important;
+position: relative;
+top: -25px;
    
   }
 
@@ -466,7 +469,7 @@ margin-top: 20px;
   }
 
   .projects-carousel__arrow--next {
-   right: 30px !important;
+ 
   }
 
   .projects-carousel__dots {
@@ -491,7 +494,8 @@ margin-top: 20px;
 @media (max-width: 480px) {
 
   .projects-carousel {
-    padding: 60px 0;
+    padding: 20px 0;
+    line-height: 1.2px !important;
   }
 
   .projects-carousel__container {
@@ -503,7 +507,7 @@ margin-top: 20px;
   }
 
   .projects-carousel__intro {
-    font-size: 13px;
+    font-size: 8px;
   }
 
   .project-card__browser-top {
@@ -514,12 +518,12 @@ margin-top: 20px;
   /* IMAGE */
 
   .project-card__screen {
-    height: 270px !important;
-    width: 280px !important;
+    height: 140px !important;
+    width: 300px !important;
     
   }
   .img-cap {
-    width: 300px !important;
+    width: 270px !important;
    
   }
 
@@ -527,35 +531,47 @@ margin-top: 20px;
   /* CONTENT */
 
   .project-card__content {
-    padding: 16px 16px 20px;
+    padding: 0px 15px 15px;
+   
+  }
+   .project-card__number {
+  padding-top: 17px !important;
+    font-size: 12px;
   }
 
   .project-card__title {
-    font-size: 19px;
+    font-size: 14px;
+       
   }
 
   .project-card__description {
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.6;
   }
 
   .project-card__link {
     font-size: 13px;
-  }
+      }
 
   .projects-carousel__arrow {
+    margin-top: 17px;
     width: 30px;
     height: 30px;
     font-size: 20px;
     background-color: var(--sand);
-  }
+     }
 
   .projects-carousel__arrow--prev {
-    left: -4px;
+left: 50px !important;
+bottom: 40px;
+    position: relative;
   }
 
   .projects-carousel__arrow--next {
-    right: -4px;
+left: -50px;
+bottom: 40px;
+    position: relative;
+     
   }
 }
 
