@@ -56,7 +56,7 @@ export default function CTA() {
           </div>
 
           <Link
-            href="/contact"
+            href="#contact"
             className="btn-white-custom"
           >
             {t.button}

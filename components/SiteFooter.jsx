@@ -1,3 +1,4 @@
+
 "use client";
 
 import { siteConfig } from "../lib/site-config";
@@ -15,6 +16,7 @@ function SiteFooter() {
       contact: "Contact",
       quote: "Demander un devis",
       rights: "Tous droits réservés.",
+      tunisia: "Tunisie",
     },
 
     en: {
@@ -24,6 +26,7 @@ function SiteFooter() {
       contact: "Contact",
       quote: "Request a quote",
       rights: "All rights reserved.",
+      tunisia: "Tunisia",
     },
   };
 
@@ -31,7 +34,7 @@ function SiteFooter() {
 
   const navigation = [
     {
-      label: language === "fr" ? "Services" : "Services",
+      label: "Services",
       href: "#services",
     },
     {
@@ -47,7 +50,7 @@ function SiteFooter() {
       href: "#realisations",
     },
     {
-      label: language === "fr" ? "Contact" : "Contact",
+      label: "Contact",
       href: "#contact",
     },
   ];
@@ -56,21 +59,19 @@ function SiteFooter() {
     <footer className="site-footer">
       <div className="container">
 
-        <div className="row gy-5 site-footer__top">
+        <div className="row g-4 site-footer__top">
 
-          {/* Marque */}
-          <div className="col-lg-4">
-            <a
-              href="#top"
-              className="site-footer__brand"
-            >
+          {/* COLONNE 1 : LOGO + DESCRIPTION + RÉSEAUX */}
+          <div className="col-md-4">
+
+            <a href="#top" className="site-footer__brand">
               <img
                 src="/images/logo-devflo.png"
                 className="site-footer__logo"
                 alt={siteConfig.brand}
               />
 
-              <span>
+              <span className="site-footer__brand-info">
                 <span className="site-footer__brand-name">
                   {siteConfig.brand}
                 </span>
@@ -84,82 +85,128 @@ function SiteFooter() {
             <p className="site-footer__about">
               {t.about}
             </p>
+
+            <div className="site-footer__social">
+
+              <a
+                href="#"
+                className="site-footer__social-btn"
+                aria-label="Facebook"
+              >
+                <i className="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="#"
+                className="site-footer__social-btn"
+                aria-label="Instagram"
+              >
+                <i className="fa-brands fa-instagram"></i>
+              </a>
+
+              <a
+                href="#"
+                className="site-footer__social-btn"
+                aria-label="LinkedIn"
+              >
+                <i className="fa-brands fa-linkedin-in"></i>
+              </a>
+
+              <a
+                href={siteConfig.phoneHref}
+                className="site-footer__social-btn"
+                aria-label="WhatsApp"
+              >
+                <i className="fa-brands fa-whatsapp"></i>
+              </a>
+
+            </div>
+
           </div>
 
-          {/* Navigation */}
-          <div className="col-6 col-lg-3">
+          {/* COLONNE 2 : NAVIGATION */}
+          <div className="col-md-4">
+
             <h3 className="site-footer__heading">
               {t.navigation}
             </h3>
 
-            <ul className="list-unstyled site-footer__links">
+            <ul className="list-unstyled site-footer__navigation">
+
               {navigation.map((item) => (
                 <li key={item.href}>
                   <a href={item.href}>
+                    <i className="fa-solid fa-chevron-right"></i>
                     {item.label}
                   </a>
                 </li>
               ))}
+
             </ul>
+
           </div>
 
-          {/* Contact */}
-          <div className="col-6 col-lg-3">
+          {/* COLONNE 3 : CONTACT */}
+          <div className="col-md-4">
+
             <h3 className="site-footer__heading">
               {t.contact}
             </h3>
 
-            <ul className="list-unstyled site-footer__links site-footer__contact">
+            <ul className="list-unstyled site-footer__contact">
 
               <li>
-                <a
-                  className="res-contact"
-                  href={siteConfig.phoneHref}
-                >
+                <a href={siteConfig.phoneHref}>
                   <i className="fa-solid fa-phone"></i>
-                  {siteConfig.phone}
+                  <span>{siteConfig.phone}</span>
                 </a>
               </li>
 
               <li>
                 <a
-                  className="res-contact"
-                  href={`mailto:${siteConfig.email}`}
+                  href={`https://wa.me/${siteConfig.phone.replace(/\D/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <i className="fa-solid fa-envelope"></i>
-                  {siteConfig.email}
+                  <i className="fa-brands fa-whatsapp"></i>
+                  <span>WhatsApp</span>
                 </a>
               </li>
 
-              <li className="site-footer__static">
-                <i className="fa-solid fa-location-dot"></i>
-                {siteConfig.location}
+              <li>
+                <a href={`mailto:${siteConfig.email}`}>
+                  <i className="fa-solid fa-envelope"></i>
+                  <span>{siteConfig.email}</span>
+                </a>
+              </li>
+
+              <li>
+                <span>
+                  <i className="fa-solid fa-location-dot"></i>
+                  {siteConfig.location}
+                </span>
               </li>
 
             </ul>
-          </div>
 
-          {/* Appel à l'action */}
-          <div className="col-lg-2">
-            <a
-              href="#contact"
-              className="btn site-footer__cta"
-            >
+            <a href="#contact" className="site-footer__cta">
               {t.quote}
             </a>
+
           </div>
 
         </div>
 
+        {/* BOTTOM */}
         <div className="site-footer__bottom">
 
-          <p className="site-footer__copy">
+          <p>
             © {new Date().getFullYear()} {siteConfig.brand}.{" "}
             {t.rights}
           </p>
 
-          <p className="site-footer__copy">
-            {language === "fr" ? "Tunisie" : "Tunisia"}
+          <p>
+            {t.tunisia}
           </p>
 
         </div>
@@ -170,3 +217,4 @@ function SiteFooter() {
 }
 
 export default SiteFooter;
+

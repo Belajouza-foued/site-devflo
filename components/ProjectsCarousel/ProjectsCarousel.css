@@ -211,9 +211,12 @@
 .project-card__link {
   display: inline-flex;
   align-items: center;
+  padding: 10px;
+  background-color: var(--sand);
+  border-radius: 25px !important;
   gap: 10px;
   color: var(--teal);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
   text-decoration: none;
   transition:

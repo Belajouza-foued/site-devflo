@@ -1,3 +1,27 @@
+:root {
+  --navy: #0e2a35;
+  --navy-deep: #081b23;
+
+  --teal: #2f6e64;
+  --teal-light: #6a988f;
+
+  --sand: #efe6d3;
+  --cream: #fbf8f1;
+
+  --gold: #b4915b;
+  --gold-light: #d8c39a;
+
+  --ink: #16211f;
+
+  --line: rgba(14, 42, 53, 0.14);
+
+  font-family: "Work Sans", sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
 .activities {
   padding: 64px 0;
   background: var(--cream);

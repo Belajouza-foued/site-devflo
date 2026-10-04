@@ -77,13 +77,14 @@ function SiteHeader() {
 
               {/* CTA */}
               <li className="nav-item mt-2 mt-lg-0">
-                <a
-                  href="#contact"
-                  className="btn btn-primary rounded-pill site-header__cta"
-                  onClick={() => setOpen(false)}
-                >
-                 {t.quote}
-                </a>
+                 <a
+            href="#contact"
+            className="btn-white-custom"
+          >Demander un devis
+            {t.button}
+
+            <i className="bi bi-arrow-right"></i>
+          </a>
               </li>
 
             </ul>

@@ -15,12 +15,21 @@ const projects = [
     technologies: ["Next.js", "React", "TypeScript"],
     url: "https://rimag.tn",
   },
-
+  {
+    title: "Farjallah Auto",
+    description: {
+      fr: "Plateforme web pour la vente de pièces automobiles, avec catalogue et recherche de produits.",
+      en: "Web platform for selling auto parts, with a product catalog and search functionality.",
+    },
+    image: "/images/projet-farjalah.png",
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    url: "https://farjallah-react-4ffg.vercel.app",
+  },
   {
     title: "Seafield",
     description: {
-      fr: "Site web moderne pour une entreprise spécialisée dans les solutions et services maritimes.",
-      en: "Modern website for a company specialized in maritime solutions and services.",
+      fr: "Site web moderne pour un hôtel proposant un hébergement confortable, une expérience gastronomique et des moments de détente.",
+      en: "Modern website for a hotel offering comfortable accommodation, dining, and leisure experiences.",
     },
     image: "/images/projet-seafield.png",
     technologies: ["React", "JavaScript", "Next"],
@@ -38,17 +47,7 @@ const projects = [
     url: "https://spa-massage-steel.vercel.app/",
   },
 
-  {
-    title: "World Fitness",
-    description: {
-      fr: "Site web dédié au fitness et au sport, avec une interface dynamique présentant les activités et les services.",
-      en: "Fitness and sports website with a dynamic interface presenting activities and services.",
-    },
-    image: "/images/projet-worldfitness.png",
-    technologies: ["React", "JavaScript", "Bootstrap"],
-    url: "https://react-project-git-world-fitness-foueds-projects-55b6a7cf.vercel.app/",
-  },
-
+  
   {
     title: "Gym Store",
     description: {
@@ -59,40 +58,18 @@ const projects = [
     technologies: ["React", "Next", "JavaScript", "Bootstrap"],
     url: "https://gym-sport-nine.vercel.app/",
   },
-
-  {
-    title: "Farjallah Auto",
-    description: {
-      fr: "Plateforme web pour la vente de pièces automobiles, avec catalogue et recherche de produits.",
-      en: "Web platform for selling auto parts, with a product catalog and search functionality.",
-    },
-    image: "/images/projet-farjalah.png",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    url: "https://farjallah-react-4ffg.vercel.app",
-  },
-
   {
     title: "Projet Guide",
     description: {
-      fr: "Site web professionnel conçu pour présenter l’activité, les services et les informations essentielles de l’entreprise.",
-      en: "Professional website designed to present the company's business, services and essential information.",
+      fr: "Site web moderne conçu pour présenter les destinations, les activités et les expériences touristiques proposées par le guide.",
+      en: "Modern website designed to showcase destinations, activities and travel experiences offered by the tour guide.",
     },
     image: "/images/projet-firas.png",
     technologies: ["HTML", "JavaScript", "CSS"],
     url: "https://site-firas.vercel.app/index.html",
   },
 
-  {
-    title: "BCC",
-    description: {
-      fr: "Site web professionnel avec une présentation moderne de l’entreprise, de ses services et de ses informations principales.",
-      en: "Professional website with a modern presentation of the company, its services and main information.",
-    },
-    image: "/images/projet-bcc.png",
-    technologies: ["React", "JavaScript", "CSS"],
-    url: "https://bcc-socity.vercel.app/home",
-  },
-
+  
   {
     title: "Printpakia",
     description: {
@@ -101,7 +78,7 @@ const projects = [
     },
     image: "/images/projet-printpakia.png",
     technologies: ["React", "JavaScript", "CSS"],
-    url: "https://vercel.com/foueds-projects-55b6a7cf/printakia-offset",
+    url: "https://printakia-offset.vercel.app/",
   },
 ];
 

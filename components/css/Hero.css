@@ -64,10 +64,7 @@
 
   color: #ffffff;
 
-  background: var(--teal);
-
-  border-color: var(--teal);
-
+  background: var(--teal) !important;
   font-size: 10px;
   font-weight: 600;
 
@@ -82,9 +79,9 @@
 }
 
 .hero__btn-primary:hover {
-  color: #ffffff;
+  color: var(--teal) !important;
 
-  background: var(--navy);
+  background: var(--sand) !important;
 
   border-color: var(--navy);
 
@@ -99,9 +96,7 @@
 
   font-size: 15px;
   font-weight: 600;
-
-  text-decoration: underline;
-  text-decoration-color: var(--gold-light);
+    text-decoration-color: var(--gold-light);
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
 
@@ -122,7 +117,7 @@
   margin-top: 48px;
   padding-top: 24px;
 
-  border-top: 1px solid var(--line);
+ 
 }
 
 .hero__stat-number {

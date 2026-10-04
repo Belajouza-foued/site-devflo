@@ -84,13 +84,14 @@ function Hero() {
             </p>
 
             <div className="hero__actions">
-              <a
-                href="#contact"
-                className="btn btn-primary btn-lg rounded-pill hero__btn-primary"
-              >
-                {t.quote}
-                <i className="fa-solid fa-arrow-right ms-2"></i>
-              </a>
+               <a
+            href="#contact"
+            className="btn-white-custom"
+          >Demander un devis
+            {t.button}
+
+            <i className="bi bi-arrow-right"></i>
+          </a>
 
               <a href="#realisations" className="hero__link">
                 {t.projects}

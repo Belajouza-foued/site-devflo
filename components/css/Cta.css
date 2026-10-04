@@ -97,7 +97,6 @@
 .btn-white-custom {
   position: relative;
   z-index: 2;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -105,8 +104,8 @@
 
   flex-shrink: 0;
 
-  min-height: 52px;
-  padding: 14px 24px;
+  min-height: 48px;
+  padding: 0px 18px;
 
   border: 1px solid var(--gold-light);
   border-radius: 999px;

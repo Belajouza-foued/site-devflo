@@ -252,35 +252,29 @@ justify-content: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-height: 42px;
   padding: 10px 22px !important;
-
   color: var(--navy) !important;
-  background: var(--gold-light);
-
-  border: 1px solid var(--gold-light);
+  background: var(--sand) !important;
   border-radius: 999px;
-
-  font-size: 14px;
-  font-weight: 700;
-
+  font-size: 14px !important;
+  font-weight: 700 !important;
   text-decoration: none;
 
-  box-shadow: 0 8px 20px rgba(8, 27, 35, 0.18);
+ 
 
   transition:
     background 0.2s ease,
     color 0.2s ease,
     border-color 0.2s ease,
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+   
 }
 
 .site-header__cta:hover {
   color: #ffffff !important;
-  background: var(--teal);
-  border-color: var(--teal);
+  background: var(--teal) !important;
+
 
   transform: translateY(-2px);
 
@@ -391,6 +385,21 @@ justify-content: center;
   }
 }
 
+
+@media (max-width: 768.98px) {
+ .site-header .nav-link {
+    display: flex;
+flex-direction: start;
+justify-content: flex-start;
+    width: 100%;
+
+    padding: 13px 15px !important;
+
+    color: #ffffff !important;
+
+    font-size: 16px;
+  }
+}
 /* =========================================================
    PETIT MOBILE
    ========================================================= */
@@ -407,4 +416,66 @@ justify-content: center;
   .site-header .navbar-brand {
     max-width: calc(100% - 55px);
   }
+}
+/*fixer btn-custom*/
+.btn-white-custom {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  min-height: 48px;
+  padding: 0px 18px;
+
+  border: 1px solid var(--gold-light);
+  border-radius: 999px;
+
+  background: var(--gold-light);
+  color: var(--navy);
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 10px 25px rgba(8, 27, 35, 0.18);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-white-custom i {
+  font-size: 16px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+/* Hover */
+
+.btn-white-custom:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 14px 30px rgba(8, 27, 35, 0.28);
+}
+
+.btn-white-custom:hover i {
+  transform: translateX(5px);
+}
+
+/* Clic */
+
+.btn-white-custom:active {
+  transform: translateY(-1px);
 }
