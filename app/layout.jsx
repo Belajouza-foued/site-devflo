@@ -17,6 +17,8 @@ export const metadata = {
 
   description:
     "DEVFLO crée des sites web modernes, professionnels et adaptés aux besoins des entreprises et professionnels.",
+verification: { google: 
+  "D1vnVv8BPSM-K6ffIiejpIgx7MFDMxjGQG7l8mbCINU", },
 
   keywords: [
     "DEVFLO",
