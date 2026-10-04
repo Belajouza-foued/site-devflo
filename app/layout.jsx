@@ -20,23 +20,27 @@ export const metadata = {
 verification: { google: 
   "D1vnVv8BPSM-K6ffIiejpIgx7MFDMxjGQG7l8mbCINU", },
 
-  keywords: [
-    "DEVFLO",
-    "création site web",
-    "création site internet",
-    "développement web",
-    "développeur web",
-    "web designer",
-    "site vitrine",
-    "site professionnel",
-    "React",
-    "Next.js",
-    "développement frontend",
-    "développement full stack",
-    "site web Tunisie",
-    "web designer Tunisie",
-    "développeur web Tunisie",
-  ],
+
+keywords: [
+  "DEVFLO",
+  "création site web",
+  "création site internet",
+  "création site web Tunisie",
+  "développement web",
+  "développeur web",
+  "développeur web Tunisie",
+  "web designer",
+  "web designer Tunisie",
+  "site vitrine",
+  "site professionnel",
+  "site web professionnel",
+  "développeur React",
+  "développeur Next.js",
+  "développement frontend",
+  "développement full stack",
+],
+
+
 
   authors: [
     {
