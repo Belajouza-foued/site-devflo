@@ -7,8 +7,8 @@ const PLANS = {
   fr: [
     {
       name: "Starter",
-      price: "500 DT",
-      note: "À partir de",
+      price: "Sur devis",
+      note: null,
       text: "Pour une petite activité qui souhaite être présente sur Internet.",
       features: [
         "Site vitrine",
@@ -23,8 +23,8 @@ const PLANS = {
     },
     {
       name: "Professionnel",
-      price: "900 DT",
-      note: "À partir de",
+      price: "Sur devis",
+      note: null,
       text: "Pour une entreprise qui souhaite présenter son activité de manière complète.",
       features: [
         "Design personnalisé",
@@ -62,8 +62,8 @@ const PLANS = {
   en: [
     {
       name: "Starter",
-      price: "500 DT",
-      note: "Starting from",
+      price: "Quote on request",
+      note: null,
       text: "For a small business that wants to establish an online presence.",
       features: [
         "Business website",
@@ -78,8 +78,8 @@ const PLANS = {
     },
     {
       name: "Professional",
-      price: "900 DT",
-      note: "Starting from",
+      price: "Quote on request",
+      note: null,
       text: "For a business that wants to present its activity in a complete and professional way.",
       features: [
         "Custom design",
@@ -123,7 +123,7 @@ function Pricing() {
       eyebrow: "TARIFS",
       title: "Des solutions adaptées à votre projet",
       lead:
-        "Des offres à partir de 500 DT pour créer un site professionnel, moderne et adapté à votre activité. Chaque projet peut être personnalisé selon vos besoins.",
+        "Des solutions adaptées à votre activité pour créer un site professionnel, moderne et personnalisé. Chaque projet est étudié selon vos besoins.",
       badge: "Le plus choisi",
     },
 
@@ -131,7 +131,7 @@ function Pricing() {
       eyebrow: "PRICING",
       title: "Solutions adapted to your project",
       lead:
-        "Packages starting from 500 DT to create a professional, modern website adapted to your business. Each project can be customized according to your needs.",
+        "Solutions adapted to your business to create a professional, modern and personalized website. Each project is tailored to your needs.",
       badge: "Most chosen",
     },
   };
@@ -142,10 +142,8 @@ function Pricing() {
   return (
     <section id="tarifs" className="pricing">
       <div className="container">
-
         <div className="row">
           <div className="col-lg-7">
-
             <span className="pricing__eyebrow">
               {t.eyebrow}
             </span>
@@ -157,7 +155,6 @@ function Pricing() {
             <p className="section-lead">
               {t.lead}
             </p>
-
           </div>
         </div>
 
@@ -167,7 +164,6 @@ function Pricing() {
               className="col-lg-4"
               key={plan.name}
             >
-
               <div
                 className={`pricing__card ${
                   plan.featured
@@ -175,7 +171,6 @@ function Pricing() {
                     : ""
                 }`}
               >
-
                 {plan.featured && (
                   <span className="pricing__badge">
                     {t.badge}
@@ -187,7 +182,6 @@ function Pricing() {
                 </h3>
 
                 <div className="pricing__price">
-
                   {plan.note && (
                     <span className="pricing__note">
                       {plan.note}
@@ -197,7 +191,6 @@ function Pricing() {
                   <span className="pricing__amount">
                     {plan.price}
                   </span>
-
                 </div>
 
                 <p className="pricing__text">
@@ -208,7 +201,6 @@ function Pricing() {
                   {plan.features.map((feature) => (
                     <li key={feature}>
                       <i className="fa-solid fa-check"></i>
-
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -222,13 +214,10 @@ function Pricing() {
 
                   <i className="fa-solid fa-arrow-right"></i>
                 </a>
-
               </div>
-
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
